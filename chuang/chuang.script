@@ -1,0 +1,24 @@
+Window.SetBackgroundTopColor (0, 0, 0);
+Window.SetBackgroundBottomColor (0, 0, 0);
+
+progress = 1;
+
+animation.image = Image("throbber-" + progress + ".png");
+animation.sprite = Sprite();
+animation.x = Window.GetWidth() / 2 - animation.image.GetWidth()  / 2;
+animation.y = Window.GetHeight() / 2 - animation.image.GetHeight() / 2;
+animation.sprite.SetPosition(animation.x, animation.y, 0);
+animation.sprite.SetImage(animation.image);
+
+fun refresh ()
+{
+  progress++;
+  if (progress > 100)
+    progress = 1;
+  new_animation.image = Image("throbber-" + progress + ".png");
+  animation.sprite.SetImage(new_animation.image);
+  animation.sprite.SetOpacity(1);
+}
+
+Plymouth.SetRefreshFunction(refresh);
+Plymouth.SetQuitFunction(refresh);

@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=chuang
+Description=plymouth
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/chuang
+ScriptFile=/usr/share/plymouth/themes/chuang/chuang.script
